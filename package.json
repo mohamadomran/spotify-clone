@@ -17,8 +17,11 @@
     "trailingComma": "all"
   },
   "dependencies": {
-    "@supabase/auth-helpers-nextjs": "^0.7.2",
+    "@supabase/auth-helpers-nextjs": "^0.7.0",
     "@supabase/auth-helpers-react": "^0.4.0",
+    "@supabase/auth-ui-react": "^0.4.2",
+    "@supabase/auth-ui-shared": "^0.1.6",
+    "@supabase/supabase-js": "^2.23.0",
     "@types/node": "20.3.1",
     "@types/react": "18.2.12",
     "@types/react-dom": "18.2.5",
@@ -42,6 +45,9 @@
     "eslint-plugin-simple-import-sort": "^10.0.0",
     "prettier": "^2.8.8",
     "prettier-plugin-packagejson": "^2.4.3",
-    "prettier-plugin-tailwindcss": "^0.3.0"
+    "prettier-plugin-tailwindcss": "^0.3.0",
+    "@types/uniqid": "^5.3.2",
+    "encoding": "^0.1.13",
+    "supabase": "^1.64.2"
   }
 }
