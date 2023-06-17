@@ -1,34 +1,33 @@
 'use client';
 
-import Image from "next/image";
+import Image from 'next/image';
 
-import useLoadImage from "@/hooks/useLoadImage";
-import { Song } from "@/types";
+import useLoadImage from '@/hooks/useLoadImage';
+import { Song } from '@/types';
 
-import PlayButton from "./PlayButton";
+import PlayButton from './PlayButton';
 
 interface SongItemProps {
   data: Song;
   onClick: (id: string) => void;
 }
 
-const SongItem: React.FC<SongItemProps> = ({
-  data,
-  onClick
-}) => {
-
+const SongItem: React.FC<SongItemProps> = ({ data, onClick }) => {
   const imagePath = useLoadImage(data);
 
   return (
-    <div className="relative group flex flex-col items-center justify-center rounded-md overflow-hidden gap-x-4 bg-neutral-400/5 cursor-pointer hover:bg-neutral-400/10 transition p-3">
-      <div className="relative aspect-square w-full h-full rounded-md overflow-hidden">
-        <Image className="object-cover" src={imagePath || '/images/liked.png'} fill alt="Image" />
+    <div className="group relative flex cursor-pointer flex-col items-center justify-center gap-x-4 overflow-hidden rounded-md bg-neutral-400/5 p-3 transition hover:bg-neutral-400/10">
+      <div className="relative aspect-square h-full w-full overflow-hidden rounded-md">
+        <Image
+          className="object-cover"
+          src={imagePath || '/images/liked.png'}
+          fill
+          alt="Image"
+        />
       </div>
-      <div className="flex flex-col items-start w-full pt-4 gap-y-1">
-        <p className="font-semibold truncate w-full">
-          {data.title}
-        </p>
-        <p className="text-neutral-400 text-sm pb-4 w-full truncate">
+      <div className="flex w-full flex-col items-start gap-y-1 pt-4">
+        <p className="w-full truncate font-semibold">{data.title}</p>
+        <p className="w-full truncate pb-4 text-sm text-neutral-400">
           By {data.author}
         </p>
       </div>
@@ -39,4 +38,4 @@ const SongItem: React.FC<SongItemProps> = ({
   );
 };
 
-export default SongItem;;
+export default SongItem;

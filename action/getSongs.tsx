@@ -1,11 +1,11 @@
-import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
+import { createServerComponentClient } from '@supabase/auth-helpers-nextjs';
 import { cookies } from 'next/headers';
 
-import { Song } from "@/types";
+import { Song } from '@/types';
 
 const getSongs = async (): Promise<Song[]> => {
   const supbase = createServerComponentClient({
-    cookies: cookies
+    cookies: cookies,
   });
 
   const { data, error } = await supbase
